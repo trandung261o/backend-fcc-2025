@@ -1,0 +1,19 @@
+{
+  "name": "backend-fcc-2025",
+  "version": "1.0.0",
+  "description": "a tutorial for intro to backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trandung261o/backend-fcc-2025.git"
+  },
+  "author": "trandung261o",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trandung261o/backend-fcc-2025/issues"
+  },
+  "homepage": "https://github.com/trandung261o/backend-fcc-2025#readme"
+}
