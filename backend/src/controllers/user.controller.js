@@ -45,11 +45,28 @@ const loginUser = async (req, res) => {
             message: "User not found"
         });
 
-    } catch (error) {
+        // compare password
+        const isMatch = await user.comparePassword(password);
+        if (!isMatch) return res.status(400).json({
+            message: "Invalid credentials"
+        })
 
+        res.status(200).json({
+            message: "User login",
+            user: {
+                id: user._id,
+                email: user.email,
+                username: user.username
+            }
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            message: "Internal Server Error"
+        })
     }
 }
 
 export {
-    registerUser
+    registerUser, loginUser
 }

@@ -34,12 +34,11 @@ const userSchema = new Schema(
     }
 )
 
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {  //mongoose hien dai v6, v7 khi dung async thi khong duoc dung next
     if (!this.isModified("password"))
-        return next();
+        return;
 
-    this.password = await bcrypt(this.password, 10);
-    next();
+    this.password = await bcrypt.hash(this.password, 10);
 })
 
 userSchema.methods.comparePassword = async function (password) {
